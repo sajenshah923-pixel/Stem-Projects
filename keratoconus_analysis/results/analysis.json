@@ -1,0 +1,155 @@
+{
+  "source": "keratoconus_analysis/data/kc_studies.csv",
+  "study_rows": 28,
+  "exact_accuracy_rows": 20,
+  "metric_availability": {
+    "accuracy": {
+      "exact": 20,
+      "missing": 7,
+      "bound": 1
+    },
+    "sensitivity": {
+      "exact": 22,
+      "missing": 4,
+      "bound": 2
+    },
+    "specificity": {
+      "exact": 22,
+      "missing": 5,
+      "bound": 1
+    }
+  },
+  "source_notes": [
+    {
+      "study_id": "KC03",
+      "note": "Need to edit population"
+    },
+    {
+      "study_id": "KC08",
+      "note": "Couldn\u2019t find populations"
+    },
+    {
+      "study_id": "KC10",
+      "note": "Couldn\u2019t find populations"
+    },
+    {
+      "study_id": "KC26",
+      "note": "Skipped do later"
+    },
+    {
+      "study_id": "KC27",
+      "note": "Doesn\u2019t give splits"
+    }
+  ],
+  "coding_review_flags": [
+    {
+      "study_id": "KC03",
+      "issue": "Study title mentions decision tree, but network_type_raw is CNN; verify against the article before interpreting the network comparison."
+    }
+  ],
+  "excluded_accuracy_rows": [
+    {
+      "study_id": "KC04",
+      "accuracy_raw": "\u2014",
+      "reason": "missing"
+    },
+    {
+      "study_id": "KC06",
+      "accuracy_raw": "_",
+      "reason": "missing"
+    },
+    {
+      "study_id": "KC08",
+      "accuracy_raw": "-",
+      "reason": "missing"
+    },
+    {
+      "study_id": "KC09",
+      "accuracy_raw": "-",
+      "reason": "missing"
+    },
+    {
+      "study_id": "KC16",
+      "accuracy_raw": ">95.5",
+      "reason": "bound, not an exact value"
+    },
+    {
+      "study_id": "KC17",
+      "accuracy_raw": "-",
+      "reason": "missing"
+    },
+    {
+      "study_id": "KC26",
+      "accuracy_raw": "",
+      "reason": "missing"
+    },
+    {
+      "study_id": "KC28",
+      "accuracy_raw": "",
+      "reason": "missing"
+    }
+  ],
+  "accuracy_percent_unweighted": {
+    "n": 20,
+    "mean": 96.369,
+    "median": 97.775,
+    "minimum": 87.0,
+    "maximum": 100.0
+  },
+  "sensitivity_percent_unweighted": {
+    "n": 22,
+    "mean": 95.57545454545453,
+    "median": 97.78999999999999,
+    "minimum": 76.92,
+    "maximum": 100.0
+  },
+  "specificity_percent_unweighted": {
+    "n": 22,
+    "mean": 96.20272727272727,
+    "median": 97.4,
+    "minimum": 85.0,
+    "maximum": 100.0
+  },
+  "shapiro_wilk_accuracy": {
+    "n": 20,
+    "w_statistic": 0.8265044541680382,
+    "p_value": 0.0022073859689762713
+  },
+  "spearman_year_accuracy": {
+    "n": 20,
+    "rho": -0.3731879218050725,
+    "p_value": 0.10509043666005233
+  },
+  "kruskal_wallis_network_type": {
+    "n": 20,
+    "group_sizes": {
+      "cnn": 9,
+      "multiple": 5,
+      "other": 1,
+      "rf": 4,
+      "svm": 1
+    },
+    "groups_with_fewer_than_two_studies": [
+      "other",
+      "svm"
+    ],
+    "h_statistic": 5.534161023325811,
+    "p_value": 0.23674297729915894
+  },
+  "kruskal_wallis_input_type": {
+    "n": 20,
+    "group_sizes": {
+      "both": 12,
+      "tomography": 2,
+      "topography": 6
+    },
+    "groups_with_fewer_than_two_studies": [],
+    "h_statistic": 4.591547529470778,
+    "p_value": 0.1006834578112466
+  },
+  "severity_accuracy": {
+    "status": "not computed",
+    "reason": "The sheet has severity-group counts but not a separate accuracy for each severity group. A study's overall accuracy cannot be assigned to each group."
+  },
+  "limitations": "Unweighted, exploratory study-level comparisons of the exact entries in my extraction sheet. Category labels were derived from the recorded descriptions; some source entries have notes or ambiguous network labels. Small categories, heterogeneous studies, and uncorrected multiple tests limit inference. These statistics may differ from the analyses in my paper."
+}
